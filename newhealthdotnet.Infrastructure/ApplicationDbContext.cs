@@ -3,11 +3,19 @@ using newhealthdotnet.Domain.Entities;
 
 namespace newhealthdotnet.Infrastructure
 {
-    public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options)
+    public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+
+        }
+
         public DbSet<User> Users { get; set; }
 
-        // Add other DbSets for your entities here
-        // public DbSet<AnotherEntity> AnotherEntities { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Apply configurations for the User entity
+            modelBuilder.Entity<User>().ToTable("Users");
+        }
     }
 }

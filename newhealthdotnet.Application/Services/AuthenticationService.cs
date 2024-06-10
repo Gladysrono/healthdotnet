@@ -10,9 +10,10 @@ namespace newhealthdotnet.Application.Services
         private readonly IUserRepository _userRepository;
         private readonly JwtTokenGenerator _JwtTokenGenerator;//basically injecting jwtTokengenerator using constrctor
 
-        public AuthenticationService(IUserRepository userRepository)
+        public AuthenticationService(IUserRepository userRepository, JwtTokenGenerator JwtTokenGenerator)
         {
             _userRepository = userRepository;
+            _JwtTokenGenerator = JwtTokenGenerator;
         }
         public async Task<AuthenticationResponse> RegisterAsync(RegisterRequest request)
         {
