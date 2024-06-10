@@ -5,16 +5,11 @@ using newhealthdotnet.Infrastructure.Authentication;
 using newhealthdotnet.Infrastructure.Repositories;
 namespace newhealthdotnet.Application.Services
 {
-    public class AuthenticationService : IAuthenticationService
+    public class AuthenticationService(IUserRepository userRepository, JwtTokenGenerator JwtTokenGenerator) : IAuthenticationService
     {
-        private readonly IUserRepository _userRepository;
-        private readonly JwtTokenGenerator _JwtTokenGenerator;//basically injecting jwtTokengenerator using constrctor
+        private readonly IUserRepository _userRepository = userRepository;
+        private readonly JwtTokenGenerator _JwtTokenGenerator = JwtTokenGenerator;//basically injecting jwtTokengenerator using constrctor
 
-        public AuthenticationService(IUserRepository userRepository, JwtTokenGenerator JwtTokenGenerator)
-        {
-            _userRepository = userRepository;
-            _JwtTokenGenerator = JwtTokenGenerator;
-        }
         public async Task<AuthenticationResponse> RegisterAsync(RegisterRequest request)
         {
             var existingUser = await _userRepository.GetUserByEmailAsync(request.Email);
