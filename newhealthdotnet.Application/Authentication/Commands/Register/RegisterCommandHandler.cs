@@ -7,7 +7,7 @@ using newhealthdotnet.Application.Commands;
 using newhealthdotnet.Domain.Entities;
 using newhealthdotnet.Infrastructure.Authentication;
 using newhealthdotnet.Infrastructure.Repositories;
-//namespace must be provided
+//namespace be provided
 namespace newhealthdotnet.Application.Handlers
 {
     public class RegisterUserCommandHandler(IUserRepository userRepository, JwtTokenGenerator jwtTokenGenerator) : IRequestHandler<RegisterUserCommand, AuthenticationResponse>
