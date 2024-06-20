@@ -25,6 +25,7 @@
   <ItemGroup>
     <Folder Include="BillingAndPayment\Commands\" />
     <Folder Include="BillingAndPayment\Common\" />
+    <Folder Include="BillingAndPayment\Queries\" />
   </ItemGroup>
 
   <PropertyGroup>
