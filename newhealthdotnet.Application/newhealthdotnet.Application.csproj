@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BillingAndPayment\NewFolder\" />
+    <Folder Include="BillingAndPayment\Commands\" />
   </ItemGroup>
 
   <PropertyGroup>
