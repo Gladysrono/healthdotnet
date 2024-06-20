@@ -1,18 +1,8 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using newhealthdotnet.Application;
 using newhealthdotnet.Infrastructure;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication;
 using newhealthdotnet.Infrastructure.Authentication;
-using MediatR;
-using newhealthdiotnet.Contracts.Authentication;
-using System.Reflection;
-using newhealthdotnet.Application.Commands;
-using newhealthdotnet.Application.Authentication;
-using Microsoft.Extensions.DependencyInjection;
-using newhealthdotnet.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 

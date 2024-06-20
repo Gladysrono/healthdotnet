@@ -1,10 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using MediatR;
 using FluentValidation;
 using newhealthdotnet.Application.Interfaces;
 using newhealthdotnet.Application.Services;
-using newhealthdotnet.Application.Commands;
-using newhealthdotnet.Application.Handlers;
 using newhealthdotnet.Infrastructure.Authentication;
 using System.Reflection;
 using newhealthdotnet.Infrastructure.Authentication.Repositories;
