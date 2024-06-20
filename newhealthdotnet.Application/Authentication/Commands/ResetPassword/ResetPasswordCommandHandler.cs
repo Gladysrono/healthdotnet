@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using MediatR;
 using newhealthdiotnet.Contracts.Authentication;
 using newhealthdotnet.Application.Commands;
-using newhealthdotnet.Domain.Entities;
+using newhealthdotnet.Domain.Entities.UserManagement;
 using newhealthdotnet.Infrastructure.Authentication;
 using newhealthdotnet.Infrastructure.Repositories;
 

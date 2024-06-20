@@ -1,4 +1,4 @@
-﻿using newhealthdotnet.Domain.Entities;
+﻿using newhealthdotnet.Domain.Entities.UserManagement;
 
 namespace newhealthdotnet.Infrastructure.Authentication
 {

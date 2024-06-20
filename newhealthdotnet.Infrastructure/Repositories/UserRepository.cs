@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using newhealthdotnet.Domain.Entities;
+using newhealthdotnet.Domain.Entities.UserManagement;
 using System.Threading.Tasks;
 
 namespace newhealthdotnet.Infrastructure.Repositories

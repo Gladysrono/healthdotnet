@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using newhealthdotnet.Domain.Entities;
+using newhealthdotnet.Domain.Entities.UserManagement;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;

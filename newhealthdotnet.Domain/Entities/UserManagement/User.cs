@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace newhealthdotnet.Domain.Entities
+namespace newhealthdotnet.Domain.Entities.UserManagement
 {
     public class User
     {
