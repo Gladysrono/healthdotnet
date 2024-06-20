@@ -22,6 +22,10 @@
     <ProjectReference Include="..\newhealthdotnet.Infrastructure\newhealthdotnet.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BillingAndPayment\NewFolder\" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
