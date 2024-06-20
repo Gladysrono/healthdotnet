@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="BillingAndPayment\Commands\" />
+    <Folder Include="BillingAndPayment\Common\" />
   </ItemGroup>
 
   <PropertyGroup>
