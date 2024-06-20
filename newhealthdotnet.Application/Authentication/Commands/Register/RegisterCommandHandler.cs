@@ -29,7 +29,10 @@ namespace newhealthdotnet.Application.Handlers
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 Email = request.Email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password)
+               PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+                ResetPasswordToken = string.Empty, // Initialize required member
+                ResetPasswordTokenExpiry = null
+
             };
 
             await _userRepository.AddUserAsync(user);

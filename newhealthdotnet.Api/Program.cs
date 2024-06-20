@@ -6,6 +6,13 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication;
 using newhealthdotnet.Infrastructure.Authentication;
+using MediatR;
+using newhealthdiotnet.Contracts.Authentication;
+using System.Reflection;
+using newhealthdotnet.Application.Commands;
+using newhealthdotnet.Application.Authentication;
+using Microsoft.Extensions.DependencyInjection;
+using newhealthdotnet.Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,13 +21,19 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddApplication();
+
 builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();  
+builder.Services.AddSwaggerGen();
+
+//builder.Services.AddMediatR(Assembly.GetExecutingAssembly()); // Register MediatR for services from the executing assembly
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+
+//builder.Services.AddScoped<ITokenGenerator, JwtTokenGenerator>();
+
 builder.Services.AddSingleton<JwtTokenGenerator>();
 
 

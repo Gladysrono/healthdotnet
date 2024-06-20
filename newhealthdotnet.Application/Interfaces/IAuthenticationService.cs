@@ -1,9 +1,8 @@
-﻿using newhealthdiotnet.Contracts.Authentication;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity.Data;
+using newhealthdiotnet.Contracts.Authentication;
+using LoginRequest = newhealthdiotnet.Contracts.Authentication.LoginRequest;
+using RegisterRequest = newhealthdiotnet.Contracts.Authentication.RegisterRequest;
 
 namespace newhealthdotnet.Application.Interfaces
 {
@@ -11,9 +10,7 @@ namespace newhealthdotnet.Application.Interfaces
     {
         Task<AuthenticationResponse> RegisterAsync(RegisterRequest request);
         Task<AuthenticationResponse> LoginAsync(LoginRequest request);
-        
-
-
-
+        Task ForgetPasswordAsync(ForgetPassword request);
+        Task ResetPasswordAsync(ResetPassword request);
     }
 }

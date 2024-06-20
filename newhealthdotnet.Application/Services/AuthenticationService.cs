@@ -1,14 +1,22 @@
-﻿using newhealthdiotnet.Contracts.Authentication;
+﻿
+
+using newhealthdiotnet.Contracts.Authentication;
 using newhealthdotnet.Application.Interfaces;
 using newhealthdotnet.Domain.Entities;
 using newhealthdotnet.Infrastructure.Authentication;
 using newhealthdotnet.Infrastructure.Repositories;
+
 namespace newhealthdotnet.Application.Services
 {
-    public class AuthenticationService(IUserRepository userRepository, JwtTokenGenerator JwtTokenGenerator) : IAuthenticationService
+    public class AuthenticationService(IUserRepository userRepository,
+                                       JwtTokenGenerator jwtTokenGenerator,
+                                       IEmailSender emailSender,
+                                       ITokenGenerator tokenGenerator) : IAuthenticationService
     {
         private readonly IUserRepository _userRepository = userRepository;
-        private readonly JwtTokenGenerator _JwtTokenGenerator = JwtTokenGenerator;//basically injecting jwtTokengenerator using constrctor
+        private readonly JwtTokenGenerator _jwtTokenGenerator = jwtTokenGenerator;
+        private readonly IEmailSender _emailSender = emailSender;
+        private readonly ITokenGenerator _tokenGenerator = tokenGenerator;
 
         public async Task<AuthenticationResponse> RegisterAsync(RegisterRequest request)
         {
@@ -24,13 +32,14 @@ namespace newhealthdotnet.Application.Services
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 Email = request.Email,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password)
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+                ResetPasswordToken = string.Empty, // Initialize required member
+                ResetPasswordTokenExpiry = null
             };
-            
+
             await _userRepository.AddUserAsync(user);
 
-            
-            var token = _JwtTokenGenerator.GenerateToken(user);//calling the method from jwttokengenerator class
+            var token = _jwtTokenGenerator.GenerateToken(user);
 
             return new AuthenticationResponse { Token = token };
         }
@@ -43,10 +52,47 @@ namespace newhealthdotnet.Application.Services
                 throw new Exception("Invalid credentials");
             }
 
-            // Generate JWT token
-            var token = _JwtTokenGenerator.GenerateToken(user);//calling the method from jwttokengenerator class
+            var token = _jwtTokenGenerator.GenerateToken(user);
 
             return new AuthenticationResponse { Token = token };
         }
+
+        public async Task ForgetPasswordAsync(ForgetPassword request)
+        {
+            var user = await _userRepository.GetUserByEmailAsync(request.Email);
+            if (user == null)
+            {
+                throw new Exception("User does not exist");
+            }
+
+            var resetToken = _tokenGenerator.GenerateToken(user);
+            await _emailSender.SendResetPasswordEmailAsync(user.Email, resetToken);
+        }
+
+        public async Task ResetPasswordAsync(ResetPassword request)
+        {
+            var user = await _userRepository.GetUserByEmailAsync(request.Email);
+            if (user == null)
+            {
+                throw new Exception("User does not exist");
+            }
+
+            if (!ValidateToken(request.Token, user)) // Implement the token validation logic here
+            {
+                throw new Exception("Invalid or expired token");
+            }
+
+            user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.NewPassword);
+            await _userRepository.UpdateUserAsync(user);
+        }
+
+
+        private bool ValidateToken(string token, User user)
+        {
+            // Add your token validation logic here
+            return true; // Placeholder for actual token validation
+        }
+
+        
     }
 }

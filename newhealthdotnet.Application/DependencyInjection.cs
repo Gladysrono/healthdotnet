@@ -27,6 +27,7 @@ namespace newhealthdotnet.Application
 
             // Register other infrastructure services
             services.AddScoped<IUserRepository, UserRepository>();
+            //services.AddScoped<ITokenGenerator, JwtTokenGenerator>();
             services.AddScoped<JwtTokenGenerator>();
 
             return services;

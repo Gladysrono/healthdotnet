@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace newhealthdotnet.Infrastructure.Authentication
 {
-    public class JwtTokenGenerator(IConfiguration configuration)
+    public class JwtTokenGenerator(IConfiguration configuration) : ITokenGenerator
     {
         private readonly IConfiguration _configuration = configuration;
 
