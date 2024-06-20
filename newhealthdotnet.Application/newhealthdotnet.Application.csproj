@@ -23,8 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="BillingAndPayment\Commands\" />
+    <Folder Include="BillingAndPayment\CommandsAndQueries\Commands\" />
     <Folder Include="BillingAndPayment\Common\" />
+    <Folder Include="BillingAndPayment\CommandsAndQueries\" />
     <Folder Include="BillingAndPayment\Queries\" />
   </ItemGroup>
 
