@@ -5,8 +5,10 @@ using MediatR;
 using newhealthdiotnet.Contracts.Authentication;
 using newhealthdotnet.Application.Commands;
 using newhealthdotnet.Domain.Entities;
+using newhealthdotnet.Domain.Entities.UserManagement;
 using newhealthdotnet.Infrastructure.Authentication;
-using newhealthdotnet.Infrastructure.Repositories;
+using newhealthdotnet.Infrastructure.Authentication.Repositories;
+
 //namespace to be provided
 namespace newhealthdotnet.Application.Handlers
 {

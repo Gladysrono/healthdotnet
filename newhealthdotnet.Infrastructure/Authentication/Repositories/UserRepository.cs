@@ -2,7 +2,7 @@
 using newhealthdotnet.Domain.Entities.UserManagement;
 using System.Threading.Tasks;
 
-namespace newhealthdotnet.Infrastructure.Repositories
+namespace newhealthdotnet.Infrastructure.Authentication.Repositories
 {
     public class UserRepository : IUserRepository
     {
@@ -20,7 +20,7 @@ namespace newhealthdotnet.Infrastructure.Repositories
 
         public async Task AddUserAsync(User user)
         {
-            _context.Users.Add(user); 
+            _context.Users.Add(user);
             await _context.SaveChangesAsync();
         }
 

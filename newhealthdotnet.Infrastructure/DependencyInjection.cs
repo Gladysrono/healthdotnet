@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using newhealthdotnet.Infrastructure.Repositories;
 using newhealthdotnet.Infrastructure.Authentication;
 using System.Text;
+using newhealthdotnet.Infrastructure.Authentication.Repositories;
 
 namespace newhealthdotnet.Infrastructure
 {

@@ -3,8 +3,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using newhealthdotnet.Application.Commands;
-using newhealthdotnet.Infrastructure.Repositories;
 using newhealthdotnet.Infrastructure.Authentication;
+using newhealthdotnet.Infrastructure.Authentication.Repositories;
 
 namespace newhealthdotnet.Application.Handlers
 {

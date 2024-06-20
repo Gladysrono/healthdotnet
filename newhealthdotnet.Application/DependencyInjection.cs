@@ -7,8 +7,8 @@ using newhealthdotnet.Application.Commands;
 using newhealthdotnet.Application.Handlers;
 using newhealthdotnet.Application.Validators;
 using newhealthdotnet.Infrastructure.Authentication;
-using newhealthdotnet.Infrastructure.Repositories;
 using System.Reflection;
+using newhealthdotnet.Infrastructure.Authentication.Repositories;
 
 namespace newhealthdotnet.Application
 {
