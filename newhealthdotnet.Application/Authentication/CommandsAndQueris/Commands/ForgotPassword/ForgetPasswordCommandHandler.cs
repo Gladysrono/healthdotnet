@@ -2,11 +2,10 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using newhealthdotnet.Application.Commands;
 using newhealthdotnet.Infrastructure.Authentication;
 using newhealthdotnet.Infrastructure.Authentication.Repositories;
 
-namespace newhealthdotnet.Application.Handlers
+namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.ForgotPassword
 {
     public class ForgetPasswordCommandHandler : IRequest<ForgetPasswordCommand>
     {

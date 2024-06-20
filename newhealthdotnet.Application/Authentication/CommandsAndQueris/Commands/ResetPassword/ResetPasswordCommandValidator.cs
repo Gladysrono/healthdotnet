@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
-using newhealthdotnet.Application.Commands;
 
-namespace newhealthdotnet.Application.Validators
+namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.ResetPassword
 {
     public class ResetPasswordCommandValidator : AbstractValidator<ResetPasswordCommand>
     {

@@ -1,10 +1,9 @@
 ﻿using MediatR;
 using newhealthdiotnet.Contracts.Authentication;
-using newhealthdotnet.Application.Commands;
 using newhealthdotnet.Infrastructure.Authentication;
 using newhealthdotnet.Infrastructure.Authentication.Repositories;
 
-namespace newhealthdotnet.Application.Handlers
+namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Queries.Login
 {
     public class LoginUserCommandHandler(IUserRepository userRepository, JwtTokenGenerator jwtTokenGenerator) : IRequestHandler<LoginUserCommand, AuthenticationResponse>
     {

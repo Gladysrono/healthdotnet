@@ -3,14 +3,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using newhealthdiotnet.Contracts.Authentication;
-using newhealthdotnet.Application.Commands;
 using newhealthdotnet.Domain.Entities;
 using newhealthdotnet.Domain.Entities.UserManagement;
 using newhealthdotnet.Infrastructure.Authentication;
 using newhealthdotnet.Infrastructure.Authentication.Repositories;
 
 //namespace to be provided
-namespace newhealthdotnet.Application.Handlers
+namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.Register
 {
     public class RegisterUserCommandHandler(IUserRepository userRepository, JwtTokenGenerator jwtTokenGenerator) : IRequestHandler<RegisterUserCommand, AuthenticationResponse>
     {
@@ -31,7 +30,7 @@ namespace newhealthdotnet.Application.Handlers
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 Email = request.Email,
-               PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
                 ResetPasswordToken = string.Empty, // Initialize required member
                 ResetPasswordTokenExpiry = null
 

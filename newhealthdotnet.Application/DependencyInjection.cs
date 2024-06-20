@@ -5,10 +5,10 @@ using newhealthdotnet.Application.Interfaces;
 using newhealthdotnet.Application.Services;
 using newhealthdotnet.Application.Commands;
 using newhealthdotnet.Application.Handlers;
-using newhealthdotnet.Application.Validators;
 using newhealthdotnet.Infrastructure.Authentication;
 using System.Reflection;
 using newhealthdotnet.Infrastructure.Authentication.Repositories;
+using newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.Register;
 
 namespace newhealthdotnet.Application
 {

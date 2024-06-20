@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace newhealthdotnet.Application.Commands
+namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.ForgotPassword
 {
     public class ForgetPasswordCommand : IRequest
     {

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using newhealthdiotnet.Contracts.Authentication;
 
-namespace newhealthdotnet.Application.Commands
+namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.ResetPassword
 {
     public class ResetPasswordCommand : IRequest<AuthenticationResponse>
     {

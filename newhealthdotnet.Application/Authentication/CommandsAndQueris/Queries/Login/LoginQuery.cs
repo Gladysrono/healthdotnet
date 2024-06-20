@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using newhealthdiotnet.Contracts.Authentication;
 
-namespace newhealthdotnet.Application.Commands
+namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Queries.Login
 {
     public class LoginUserCommand : IRequest<AuthenticationResponse>
     {

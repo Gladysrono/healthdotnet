@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
-using newhealthdotnet.Application.Commands;
 
-namespace newhealthdotnet.Application.Validators
+namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.ForgotPassword
 {
     public class ForgetPasswordCommandValidator : AbstractValidator<ForgetPasswordCommand>
     {

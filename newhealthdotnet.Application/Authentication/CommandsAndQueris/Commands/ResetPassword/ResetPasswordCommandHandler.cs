@@ -3,12 +3,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using newhealthdiotnet.Contracts.Authentication;
-using newhealthdotnet.Application.Commands;
 using newhealthdotnet.Domain.Entities.UserManagement;
 using newhealthdotnet.Infrastructure.Authentication;
 using newhealthdotnet.Infrastructure.Authentication.Repositories;
 
-namespace newhealthdotnet.Application.Handlers
+namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.ResetPassword
 {
     public class ResetPasswordCommandHandler(IUserRepository userRepository, JwtTokenGenerator jwtTokenGenerator) : IRequestHandler<ResetPasswordCommand, AuthenticationResponse>
     {

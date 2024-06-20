@@ -1,7 +1,6 @@
 ﻿using FluentValidation;
-using newhealthdotnet.Application.Commands;
 
-namespace newhealthdotnet.Application.Validators
+namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Queries.Login
 {
     public class LoginUserCommandValidator : AbstractValidator<LoginUserCommand>
     {
