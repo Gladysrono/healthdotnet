@@ -12,7 +12,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddApplication();
 
-builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);//where dependencyinjectionfile is found
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
