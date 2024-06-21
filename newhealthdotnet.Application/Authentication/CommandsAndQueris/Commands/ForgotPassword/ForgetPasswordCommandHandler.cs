@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using newhealthdotnet.Infrastructure.Authentication;
-using newhealthdotnet.Infrastructure.Authentication.Repositories;
+using newhealthdotnet.Infrastructure.Repositories;
 
 namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.ForgotPassword
 {

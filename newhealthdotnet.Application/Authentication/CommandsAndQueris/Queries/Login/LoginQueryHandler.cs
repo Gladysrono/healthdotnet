@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using newhealthdiotnet.Contracts.Authentication;
 using newhealthdotnet.Infrastructure.Authentication;
-using newhealthdotnet.Infrastructure.Authentication.Repositories;
+using newhealthdotnet.Infrastructure.Repositories;
 
 namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Queries.Login
 {

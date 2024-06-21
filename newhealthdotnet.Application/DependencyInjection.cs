@@ -4,8 +4,8 @@ using newhealthdotnet.Application.Interfaces;
 using newhealthdotnet.Application.Services;
 using newhealthdotnet.Infrastructure.Authentication;
 using System.Reflection;
-using newhealthdotnet.Infrastructure.Authentication.Repositories;
 using newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.Register;
+using newhealthdotnet.Infrastructure.Repositories;
 
 namespace newhealthdotnet.Application
 {

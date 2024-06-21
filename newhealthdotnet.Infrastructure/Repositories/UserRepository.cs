@@ -2,7 +2,7 @@
 using newhealthdotnet.Domain.Entities.UserManagement;
 using System.Threading.Tasks;
 
-namespace newhealthdotnet.Infrastructure.Authentication.Repositories
+namespace newhealthdotnet.Infrastructure.Repositories
 {
     public class UserRepository : IUserRepository
     {

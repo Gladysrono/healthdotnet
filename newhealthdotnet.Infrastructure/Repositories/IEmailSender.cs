@@ -1,4 +1,4 @@
-﻿namespace newhealthdotnet.Infrastructure.Authentication.Repositories
+﻿namespace newhealthdotnet.Infrastructure.Repositories
 {
     public interface IEmailSender
     {

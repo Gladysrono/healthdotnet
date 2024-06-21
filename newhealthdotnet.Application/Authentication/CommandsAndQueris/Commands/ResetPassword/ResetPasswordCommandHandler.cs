@@ -5,7 +5,7 @@ using MediatR;
 using newhealthdiotnet.Contracts.Authentication;
 using newhealthdotnet.Domain.Entities.UserManagement;
 using newhealthdotnet.Infrastructure.Authentication;
-using newhealthdotnet.Infrastructure.Authentication.Repositories;
+using newhealthdotnet.Infrastructure.Repositories;
 
 namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.ResetPassword
 {

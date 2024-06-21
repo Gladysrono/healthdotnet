@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using newhealthdotnet.Infrastructure.Authentication;
 using System.Text;
-using newhealthdotnet.Infrastructure.Authentication.Repositories;
+using newhealthdotnet.Infrastructure.Repositories;
 
 namespace newhealthdotnet.Infrastructure
 {

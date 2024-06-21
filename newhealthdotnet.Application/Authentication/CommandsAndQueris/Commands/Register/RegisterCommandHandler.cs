@@ -6,7 +6,7 @@ using newhealthdiotnet.Contracts.Authentication;
 using newhealthdotnet.Domain.Entities;
 using newhealthdotnet.Domain.Entities.UserManagement;
 using newhealthdotnet.Infrastructure.Authentication;
-using newhealthdotnet.Infrastructure.Authentication.Repositories;
+using newhealthdotnet.Infrastructure.Repositories;
 
 //namespace to be provided
 namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.Register

@@ -1,6 +1,6 @@
 ﻿using newhealthdotnet.Domain.Entities.UserManagement;
 
-namespace newhealthdotnet.Infrastructure.Authentication.Repositories
+namespace newhealthdotnet.Infrastructure.Repositories
 {
     public interface IUserRepository
     {

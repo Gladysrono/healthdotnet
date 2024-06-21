@@ -4,7 +4,7 @@ using newhealthdiotnet.Contracts.Authentication;
 using newhealthdotnet.Application.Interfaces;
 using newhealthdotnet.Domain.Entities.UserManagement;
 using newhealthdotnet.Infrastructure.Authentication;
-using newhealthdotnet.Infrastructure.Authentication.Repositories;
+using newhealthdotnet.Infrastructure.Repositories;
 
 namespace newhealthdotnet.Application.Services
 {
