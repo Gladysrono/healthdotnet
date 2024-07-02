@@ -1,5 +1,6 @@
 ﻿using newhealthdiotnet.Contracts.Authentication;
 using newhealthdotnet.Domain.Entities.UserManagement;
+using newhealthdotnet.Infrastructure.Repositories;
 
 namespace newhealthdotnet.Application.Services
 {
@@ -39,7 +40,7 @@ namespace newhealthdotnet.Application.Services
                 ResetPasswordTokenExpiry = null
             };
 
-            await _userRepository.AddUserAsync(user);
+            await IUserRepository.AddUserAsync(user);
 
             //var token = _jwtTokenGenerator.GenerateToken(user);
 
