@@ -14,12 +14,15 @@ namespace newhealthdotnet.Application.Services
     // IEmailSender emailSender
     //  ITokenGenerator tokenGenerator) : IAuthenticationService
     {
+        private static IEmailSender emailSender;
         private readonly IUserRepository _userRepository = userRepository;
         private readonly JwtTokenGenerator _jwtTokenGenerator = jwtTokenGenerator;
 
         //public IEmailSender EmailSender { get; } = emailSender;
 
         private readonly IEmailSender _emailSender = emailSender;
+
+        public static JwtTokenGenerator jwtTokenGenerator { get; private set; }
 
         public async Task ForgetPasswordAsync(ForgetPassword request)
         {
