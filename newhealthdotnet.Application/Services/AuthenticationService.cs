@@ -8,7 +8,7 @@ using newhealthdotnet.Infrastructure.Repositories;
 
 namespace newhealthdotnet.Application.Services
 {
-    public class AuthenticationService(IUserRepository userRepository,: AuthenticationServiceBase
+    public class AuthenticationService(IUserRepository userRepository): AuthenticationServiceBase
 
     //  JwtTokenGenerator jwtTokenGenerator,
     // IEmailSender emailSender
