@@ -11,27 +11,27 @@ namespace newhealthdotnet.Application.Authentication.CommandsAndQueris.Commands.
     {
         private readonly IUserRepository _userRepository;
         private readonly IEmailSender _emailSender;
-        private readonly ITokenGenerator _tokenGenerator;
+      //  private readonly ITokenGenerator _tokenGenerator;
 
         public ForgetPasswordCommandHandler(IUserRepository userRepository, IEmailSender emailSender, ITokenGenerator tokenGenerator)
         {
             _userRepository = userRepository;
             _emailSender = emailSender;
-            _tokenGenerator = tokenGenerator;
+         //   _tokenGenerator = tokenGenerator;
         }
 
-        public async Task<Unit> Handle(ForgetPasswordCommand request, CancellationToken cancellationToken)
-        {
-            var user = await _userRepository.GetUserByEmailAsync(request.Email);
-            if (user == null)
-            {
-                throw new Exception("User does not exist");
+       // public async Task<Unit> Handle(ForgetPasswordCommand request, CancellationToken cancellationToken)
+        //{
+          //  var user = await _userRepository.GetUserByEmailAsync(request.Email);
+          //  if (user == null)
+          //  {
+             //   throw new Exception("User does not exist");
             }
 
-            var resetToken = _tokenGenerator.GenerateToken(user);
-            await _emailSender.SendResetPasswordEmailAsync(user.Email, resetToken);
+           // var resetToken = _tokenGenerator.GenerateToken(user);
+            //await _emailSender.SendResetPasswordEmailAsync(user.Email, resetToken);
 
-            return Unit.Value;
+         //   return Unit.Value;
         }
-    }
-}
+    //}
+//}

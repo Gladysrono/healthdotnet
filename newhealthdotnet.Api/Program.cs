@@ -22,7 +22,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
-builder.Services.AddScoped<ITokenGenerator, JwtTokenGenerator>();
+//builder.Services.AddScoped<ITokenGenerator, ITokenGenerator>();
 
 builder.Services.AddSingleton<JwtTokenGenerator>();
 

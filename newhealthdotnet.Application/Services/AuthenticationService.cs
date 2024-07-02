@@ -9,14 +9,17 @@ using newhealthdotnet.Infrastructure.Repositories;
 namespace newhealthdotnet.Application.Services
 {
     public class AuthenticationService(IUserRepository userRepository,
-                                       JwtTokenGenerator jwtTokenGenerator,
-                                       IEmailSender emailSender,
-                                       ITokenGenerator tokenGenerator) : IAuthenticationService
+                                     //  JwtTokenGenerator jwtTokenGenerator,
+                                      // IEmailSender emailSender
+                                     //  ITokenGenerator tokenGenerator) : IAuthenticationService
     {
         private readonly IUserRepository _userRepository = userRepository;
         private readonly JwtTokenGenerator _jwtTokenGenerator = jwtTokenGenerator;
+
+        //public IEmailSender EmailSender { get; } = emailSender;
+
         private readonly IEmailSender _emailSender = emailSender;
-        private readonly ITokenGenerator _tokenGenerator = tokenGenerator;
+        // private readonly ITokenGenerator _tokenGenerator = tokenGenerator;
 
         public async Task<AuthenticationResponse> RegisterAsync(RegisterRequest request)
         {
@@ -39,9 +42,9 @@ namespace newhealthdotnet.Application.Services
 
             await _userRepository.AddUserAsync(user);
 
-            var token = _jwtTokenGenerator.GenerateToken(user);
+            //var token = _jwtTokenGenerator.GenerateToken(user);
 
-            return new AuthenticationResponse { Token = token };
+            //return new AuthenticationResponse { Token = token };
         }
 
         public async Task<AuthenticationResponse> LoginAsync(LoginRequest request)
@@ -52,9 +55,9 @@ namespace newhealthdotnet.Application.Services
                 throw new Exception("Invalid credentials");
             }
 
-            var token = _jwtTokenGenerator.GenerateToken(user);
+           // var token = _jwtTokenGenerator.GenerateToken(user);
 
-            return new AuthenticationResponse { Token = token };
+          //  return new AuthenticationResponse { Token = token };
         }
 
         public async Task ForgetPasswordAsync(ForgetPassword request)

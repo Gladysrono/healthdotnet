@@ -24,7 +24,7 @@ namespace newhealthdotnet.Infrastructure
             services.AddScoped<IEmailSender, EmailSender>();
 
             // Token Generator Service
-            services.AddScoped<ITokenGenerator, ITokenGenerator>();
+           // services.AddScoped<ITokenGenerator, ITokenGenerator>();
 
             // Authentication
             services.AddAuthentication(options =>

@@ -14,7 +14,7 @@ namespace newhealthdotnet.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             // Register application services
-            services.AddScoped<IAuthenticationService, AuthenticationService>();
+           // services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             // Register MediatR services
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly()));
