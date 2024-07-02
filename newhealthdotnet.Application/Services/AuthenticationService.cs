@@ -68,7 +68,7 @@ namespace newhealthdotnet.Application.Services
                 throw new Exception("User does not exist");
             }
 
-            var resetToken = _tokenGenerator.GenerateToken(user);
+            var resetToken = _jwtTokenGenerator.GenerateToken(user);
             await _emailSender.SendResetPasswordEmailAsync(user.Email, resetToken);
         }
 
