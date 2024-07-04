@@ -20,7 +20,7 @@ namespace newhealthdotnet.Infrastructure
 
             // Repositories
             services.AddScoped<IUserRepository, UserRepository>();
-            // adding Services
+            // adding Authentication Services 
             services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             // Email Sender Service
