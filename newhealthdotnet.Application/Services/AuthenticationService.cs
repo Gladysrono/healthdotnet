@@ -1,5 +1,5 @@
-﻿
-
+﻿using System;
+using System.Threading.Tasks;
 using newhealthdiotnet.Contracts.Authentication;
 using newhealthdotnet.Application.Interfaces;
 using newhealthdotnet.Domain.Entities.UserManagement;
@@ -8,21 +8,30 @@ using newhealthdotnet.Infrastructure.Repositories;
 
 namespace newhealthdotnet.Application.Services
 {
-    public class AuthenticationService(IUserRepository userRepository): AuthenticationServiceBase
-
-    //  JwtTokenGenerator jwtTokenGenerator,
-    // IEmailSender emailSender
-    //  ITokenGenerator tokenGenerator) : IAuthenticationService
+    public class AuthenticationService : IAuthenticationService
     {
-        private static IEmailSender emailSender;
-        private readonly IUserRepository _userRepository = userRepository;
-        private readonly JwtTokenGenerator _jwtTokenGenerator = jwtTokenGenerator;
+        private readonly IUserRepository _userRepository;
+        private readonly JwtTokenGenerator _jwtTokenGenerator;
+        private readonly IEmailSender _emailSender;
 
-        //public IEmailSender EmailSender { get; } = emailSender;
+        public AuthenticationService(IUserRepository userRepository, JwtTokenGenerator jwtTokenGenerator, IEmailSender emailSender)
+        {
+            _userRepository = userRepository;
+            _jwtTokenGenerator = jwtTokenGenerator;
+            _emailSender = emailSender;
+        }
 
-        private readonly IEmailSender _emailSender = emailSender;
+        public async Task<AuthenticationResponse> RegisterAsync(RegisterRequest request)
+        {
+            // Implement registration logic here
+            throw new NotImplementedException();
+        }
 
-        public static JwtTokenGenerator jwtTokenGenerator { get; private set; }
+        public async Task<AuthenticationResponse> LoginAsync(LoginRequest request)
+        {
+            // Implement login logic here
+            throw new NotImplementedException();
+        }
 
         public async Task ForgetPasswordAsync(ForgetPassword request)
         {
@@ -53,13 +62,10 @@ namespace newhealthdotnet.Application.Services
             await _userRepository.UpdateUserAsync(user);
         }
 
-
         private bool ValidateToken(string token, User user)
         {
             // Add your token validation logic here
             return true; // Placeholder for actual token validation
         }
-
-        
     }
 }
