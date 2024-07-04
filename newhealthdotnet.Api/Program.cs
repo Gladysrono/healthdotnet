@@ -20,9 +20,10 @@ builder.Services.AddSwaggerGen();
 
 //builder.Services.AddMediatR(Assembly.GetExecutingAssembly()); // Register MediatR for services from the executing assembly
 
-builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+//builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
 //builder.Services.AddScoped<ITokenGenerator, ITokenGenerator>();
+
 
 builder.Services.AddSingleton<JwtTokenGenerator>();
 

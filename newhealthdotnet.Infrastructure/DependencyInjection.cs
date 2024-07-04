@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using newhealthdotnet.Infrastructure.Authentication;
 using System.Text;
 using newhealthdotnet.Infrastructure.Repositories;
+using Microsoft.AspNetCore.Authentication;
 
 namespace newhealthdotnet.Infrastructure
 {
@@ -19,6 +20,8 @@ namespace newhealthdotnet.Infrastructure
 
             // Repositories
             services.AddScoped<IUserRepository, UserRepository>();
+            // adding Services
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             // Email Sender Service
             services.AddScoped<IEmailSender, EmailSender>();

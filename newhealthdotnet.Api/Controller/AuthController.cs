@@ -1,44 +1,48 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿// AuthController.cs
+using Microsoft.AspNetCore.Mvc;
 using newhealthdotnet.Application.Interfaces;
 using newhealthdiotnet.Contracts.Authentication;
-using Microsoft.AspNetCore.Identity.Data;
-using LoginRequest = newhealthdiotnet.Contracts.Authentication.LoginRequest;
-using RegisterRequest = newhealthdiotnet.Contracts.Authentication.RegisterRequest;
+using System.Threading.Tasks;
 
 namespace newhealthdotnet.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AuthController(IAuthenticationService authenticationService) : ControllerBase
+    public class AuthController : ControllerBase
     {
-        private readonly IAuthenticationService _authenticationService = authenticationService;
+        private readonly IAuthenticationService _authenticationService;
+
+        public AuthController(IAuthenticationService authenticationService)
+        {
+            _authenticationService = authenticationService;
+        }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterRequest request)
+        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
             var result = await _authenticationService.RegisterAsync(request);
             return Ok(result);
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginRequest request)
+        public async Task<IActionResult> Login([FromBody] LoginRequest request)
         {
             var result = await _authenticationService.LoginAsync(request);
             return Ok(result);
         }
+
         [HttpPost("forgot-password")]
-        public async Task<IActionResult> ForgotPassword(ForgetPassword request)
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgetPassword request)
         {
             await _authenticationService.ForgetPasswordAsync(request);
             return Ok(new { Message = "Password reset token sent to email" });
         }
+
         [HttpPost("reset-password")]
-        public async Task<IActionResult> ResetPassword(ResetPassword request)
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPassword request)
         {
             await _authenticationService.ResetPasswordAsync(request);
             return Ok(new { Message = "Password has been reset successfully" });
         }
-
-
     }
 }
